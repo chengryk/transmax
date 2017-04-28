@@ -1,8 +1,5 @@
 package console.sort.model;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.apache.commons.lang3.StringUtils;
 
 public class NameScore implements Comparable<NameScore>{
