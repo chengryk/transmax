@@ -26,7 +26,7 @@ public class NameScoreWriter implements ModelWriter{
 			if (outputFile.exists()){
 				File renamedFile = new File(outputFilePath + "." + System.currentTimeMillis());
 				FileUtils.moveFile(outputFile, renamedFile);
-				System.out.println("File renamed");
+				System.out.println("File renamed to " + renamedFile);
 			}
 			
 			for (NameScore value:values){

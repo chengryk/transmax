@@ -50,6 +50,8 @@ public class ConsoleAssignment {
 				ConsoleAssignment console = new ConsoleAssignment(args[0]);
 				console.run();
 			}
+		} else {
+			System.out.println("Too little arguments");
 		}
 	}
 }
