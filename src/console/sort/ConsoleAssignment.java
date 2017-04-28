@@ -17,8 +17,9 @@ public class ConsoleAssignment {
 	private String outputFilePath;
 	public ConsoleAssignment(String inputFilePath){
 		this.inputFilePath = inputFilePath;
-		int extIndex = inputFilePath.lastIndexOf(".txt");
-		outputFilePath = (extIndex>0?inputFilePath.substring(0, extIndex):inputFilePath) + "-graded.txt";
+		int extIndex = inputFilePath.lastIndexOf(".");
+		String ext = inputFilePath.substring(extIndex + 1);
+		outputFilePath = (extIndex>0?inputFilePath.substring(0, extIndex):inputFilePath) + "-graded." + ext;
 	}
 	
 	public String getInputFilePath(){
@@ -37,15 +38,16 @@ public class ConsoleAssignment {
 			Collections.sort(values);
 			ModelWriter writer = new NameScoreWriter(outputFilePath);
 			writer.writeValues(values);
+			System.out.println("Finished: created " + outputFilePath);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
 	public static void main(String[] args) {
-		if (args != null && args.length > 1){
-			if (!StringUtils.isBlank(args[1])){
-				ConsoleAssignment console = new ConsoleAssignment(args[1]);
+		if (args != null && args.length > 0){
+			if (!StringUtils.isBlank(args[0])){
+				ConsoleAssignment console = new ConsoleAssignment(args[0]);
 				console.run();
 			}
 		}

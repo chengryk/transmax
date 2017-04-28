@@ -1,6 +1,7 @@
 package console.sort.reader;
 
 import java.io.IOException;
+
 import java.util.List;
 
 import console.sort.model.NameScore;
